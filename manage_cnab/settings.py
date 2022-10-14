@@ -41,6 +41,8 @@ DJANGO_APPS = [
 
 MY_APPS = [
     "accounts",
+    "forms",
+    "files",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + MY_APPS
@@ -82,24 +84,24 @@ WSGI_APPLICATION = "manage_cnab.wsgi.application"
 # project_base/settings.py
 import os
 
-if os.environ.get("TEST"):
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
+# if os.environ.get("TEST"):
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.environ.get("POSTGRES_DATABASE"),
-            "USER": os.environ.get("POSTGRES_USER"),
-            "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
-            "HOST": "db",
-            "PORT": 5431,
-        }
-    }
+}
+# else:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.postgresql",
+#             "NAME": os.environ.get("POSTGRES_DATABASE"),
+#             "USER": os.environ.get("POSTGRES_USER"),
+#             "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+#             "HOST": "localhost",
+#             "PORT": 5432,
+#         }
+#     }
 
 
 # Password validation
