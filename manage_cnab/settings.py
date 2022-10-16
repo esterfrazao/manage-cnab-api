@@ -39,13 +39,17 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
+
 MY_APPS = [
     "accounts",
     "forms",
     "files",
 ]
 
-INSTALLED_APPS = DJANGO_APPS + MY_APPS
+INSTALLED_APPS = DJANGO_APPS + MY_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
