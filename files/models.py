@@ -19,9 +19,9 @@ class Types(models.IntegerChoices):
 class File(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     type = models.IntegerField(choices=Types.choices)
-    date = models.IntegerField(validators=[MaxLengthValidator(8)])
+    date = models.DateField()
     value = models.DecimalField(max_digits=10, decimal_places=2)
-    itin = models.IntegerField(validators=[MaxLengthValidator(11)])
+    itin = models.CharField(max_length=11)
     card = models.CharField(max_length=12)
     hour = models.TimeField()
     owner = models.CharField(max_length=14)
