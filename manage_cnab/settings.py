@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+import dotenv
+
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=!o=zg76-*&b8o*=qj@@cyjja5ivubecfa=acu##zg$b!d!7!r"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,26 +89,12 @@ WSGI_APPLICATION = "manage_cnab.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 # project_base/settings.py
-import os
-
-# if os.environ.get("TEST"):
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-# else:
-#     DATABASES = {
-#         "default": {
-#             "ENGINE": "django.db.backends.postgresql",
-#             "NAME": os.environ.get("POSTGRES_DATABASE"),
-#             "USER": os.environ.get("POSTGRES_USER"),
-#             "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
-#             "HOST": "localhost",
-#             "PORT": 5432,
-#         }
-#     }
 
 
 # Password validation
