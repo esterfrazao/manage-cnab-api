@@ -33,3 +33,15 @@ Pip
    ```bash
        python manage.py runserver
    ```
+
+Agora é só abrir o link http://127.0.0.1:8000/ !
+
+Obs: Caso o formulário se encontre assim:
+
+```
+{
+    "file": null
+}
+```
+
+Basta clicar em HTML Form no canto superior direito desse formulário

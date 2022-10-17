@@ -6,6 +6,7 @@ from .serializer import FileFormSerializer, FileSerializer
 
 
 class FileView(SerializerByMethod, ListCreateAPIView):
+    serializer_class = FileFormSerializer
     serializer_map = {
         "GET": FileSerializer,
         "POST": FileFormSerializer,
