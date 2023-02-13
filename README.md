@@ -34,7 +34,7 @@ Pip
        python manage.py runserver
    ```
 
-Agora é só abrir o link http://127.0.0.1:8000/ !
+Agora é só abrir o link [localhost:8000/](localhost:8000/) !
 
 Obs: Caso o formulário se encontre assim:
 
